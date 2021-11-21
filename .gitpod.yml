@@ -5,10 +5,10 @@ tasks:
       sh -c "$(curl -sSfL https://release.solana.com/v1.8.2/install)"
       export PATH=~/.local/share/solana/install/active_release/bin:$PATH
       gp env PATH=~/.local/share/solana/install/active_release/bin:$PATH
-      npm install
-      npm run build:program-rust
+      yarn install
+      npm install -g mocha
+      cargo install --git https://github.com/project-serum/anchor anchor-cli --locked
     command: |
-      gp open README-gitpod.md
       solana-keygen new --no-bip39-passphrase -o keypair.json
       solana config set --keypair keypair.json
       solana config set --url localhost

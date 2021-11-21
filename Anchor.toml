@@ -1,12 +1,12 @@
-[programs.localnet]
-myepicproject = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+[programs.devnet]
+myepicproject = "2Sj1RrnyV1zU1YgXVP5K9mdEbDuGe8nEcukePMkab1vt"
 
 [registry]
 url = "https://anchor.projectserum.com"
 
 [provider]
-cluster = "localnet"
-wallet = "/home/gitpod/.config/solana/id.json"
+cluster = "devnet"
+wallet = "keypair.json"
 
 [scripts]
 test = "node tests/myepicproject.js"

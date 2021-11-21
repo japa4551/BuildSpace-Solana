@@ -30,16 +30,23 @@ const main = async () => {
   console.log(`👀 GIF Count: ${account.totalGifs.toString()}`);
 
   // Call `add_gif`
-  await program.rpc.addGif({
-    accounts: {
-      baseAccount: baseAcc.publicKey
+  await program.rpc.addGif(
+    'https://c.tenor.com/Nrpmif9DljAAAAAC/youtube-twitch.gif',
+    {
+      accounts: {
+        baseAccount: baseAcc.publicKey,
+        user: provider.wallet.publicKey
+      }
     }
-  });
+  );
   console.log('✔️  Called `add_gif`');
 
   // Check what changed
   account = await program.account.baseAccount.fetch(baseAcc.publicKey);
   console.log(`👀 GIF Count: ${account.totalGifs.toString()}`);
+
+  // List the GIFs on the account
+  console.log('👀 GIFs:', account.gifList);
 };
 
 const runMain = async () => {

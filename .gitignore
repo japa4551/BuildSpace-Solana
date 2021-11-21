@@ -4,5 +4,6 @@
 /dist
 .env
 src/client/util/store
-test-ledger/
+.anchor
 .DS_Store
+/target

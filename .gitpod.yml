@@ -3,7 +3,10 @@ image:
 tasks:
   - init: |
       yarn install
-      npm install -g mocha
+      npm install -g mocha 
+      sudo apt-get update
+      sudo apt-get install -y --no-install-recommends pkg-config build-essential libudev-dev
+      cargo install --git https://github.com/project-serum/anchor --tag v0.18.2 anchor-cli --locked
     command: |
       solana-keygen new --no-bip39-passphrase -o keypair.json
       solana config set --keypair keypair.json
